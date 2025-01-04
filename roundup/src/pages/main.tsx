@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home : React.FunctionComponent = () => {  
     return (
-        <div className="logged-out-page">
+        <div className="logged-out-page text-center tracking-wider leading-loose">
             <h2 className="text-3xl font-bold">
                 Small Coins <br />
                 Big Difference
@@ -10,7 +10,7 @@ const Home : React.FunctionComponent = () => {
             <div>
                 Together we spark brighter tomorrows
             </div>
-            <button>Start Saving the World</button>
+            <button className="rounded-full bg-blue-500	w-1/4">Start Saving the World</button>
         </div>
     );
 }
