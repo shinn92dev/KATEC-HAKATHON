@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Home: React.FC = () => {
+const Home : React.FunctionComponent = () => {  
     return (
         <div className="logged-out-page">
-            <h2 className="text-3xl font-bold underline">
-                
+            <h2 className="text-3xl font-bold">
                 Small Coins <br />
                 Big Difference
             </h2>
