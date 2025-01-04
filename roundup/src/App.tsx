@@ -1,29 +1,24 @@
 import React from 'react';
-import './App.css';
 
-const App: React.FC = () => {  
+const App: React.FC = () => {
   return (
     <div className="App">
 
-      <h1>roundup</h1>
+      <h2>
+        Small Coins <br />
+        Big Difference
+      </h2>
 
       <div>
-        Small Coins
-        Big Difference
-
-        <div>
-          Together we spark brighter tomorrows
-        </div>
-        
-        <button>
-          Start saving the world
-        </button>
-
+        Together we spark brighter tomorrows 
       </div>
+
+      <button>Start Saving the world</button>
+
+
 
     </div>
   );
-}
+};
 
 export default App;
-
