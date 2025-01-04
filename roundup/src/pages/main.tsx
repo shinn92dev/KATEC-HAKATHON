@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoggedOut: React.FC = () => {
+const Home: React.FC = () => {
     return (
         <div className="logged-out-page">
             <h2>
@@ -15,4 +15,4 @@ const LoggedOut: React.FC = () => {
     );
 }
 
-export default LoggedOut;
+export default Home;
