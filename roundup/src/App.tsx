@@ -5,6 +5,7 @@ import Home from './pages/main';
 import LoginPage from './pages/login';
 import UserProfile from './pages/profile';
 import UserMainPage from './pages/userMain';
+import BadgesPage from './pages/mybadges';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,8 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/usermain" element={<UserMainPage/>} />
+        <Route path="/my-badges" element={<BadgesPage/>} />
+
 
 
       </Routes>
