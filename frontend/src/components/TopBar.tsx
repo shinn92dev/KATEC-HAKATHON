@@ -14,8 +14,8 @@ const TopBar: React.FunctionComponent = () => {
     };
     return (
         <div className="top-bar w-full max-w-md flex justify-between p-4 bg-white shadow-md">
-            <div className="text-2xl font-bold" onClick={handleHomeClick}>
-                My App
+            <div className="text-2xl font-bold text-center" onClick={handleHomeClick}>
+                Roundup
             </div>
             <div className="flex items-center">
                 <div className="mr-5">
