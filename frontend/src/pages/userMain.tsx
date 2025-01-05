@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useUser } from "@clerk/clerk-react";
 
 const UserMainPage: React.FunctionComponent = () => {
     const [isConnected, setIsConnected] = useState<boolean>(() => {
@@ -7,6 +8,10 @@ const UserMainPage: React.FunctionComponent = () => {
         const savedState = localStorage.getItem("isConnected");
         return savedState === "true"; // 문자열 비교
     });
+
+    const { user } = useUser();
+    const userName = user?.firstName || "there!";
+
     // Initial connection check
     useEffect(() => {
         fetch("http://localhost:5000/check_paypal_connected")
@@ -48,33 +53,64 @@ const UserMainPage: React.FunctionComponent = () => {
     };
 
     return (
-        <div className="logged-out-page text-center tracking-wider leading-loose content">
+        <div className="logged-out-page text-center tracking-wider leading-loose content flex justify-center">
             {isConnected ? (
-                <>
-                    <h2 className="text-3xl font-bold">Hi UserName,</h2>
-
-                    <div>
-                        From last donation, you have saved
-                        <div>$15.80</div>
-                        to donate. You can donate it to save the world.
-                    </div>
-
-                    <button className="rounded-full bg-blue-500	w-1/4">
-                        <Link to="/login" className="text-white">
-                            Who need help?
+                <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6 max-w-md">
+                    <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 text-center">
+                        <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
+                            Welcome, {userName}!
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                            From your last donation, you have saved:
+                        </p>
+                        <div className="text-4xl font-bold text-blue-600 my-4">
+                            $15.80
+                        </div>
+                        <Link
+                            to="/transaction"
+                            className="text-sm text-blue-500 hover:underline"
+                        >
+                            See details
                         </Link>
-                    </button>
-                </>
+                    </div>
+                    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6 max-w-md mt-2">
+                        <p className="text-gray-500 mb-6">
+                            You can donate it to save the world. Thank you for
+                            making a difference!
+                        </p>
+
+                        <Link
+                            to="/organization"
+                            className="text-sm text-blue-500 hover:underline"
+                        >
+                            <button className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-600 transition">
+                                Who Needs Help?
+                            </button>
+                        </Link>
+                    </div>
+                </div>
             ) : (
                 <>
-                    <h2 className="text-3xl font-bold">Welcome!</h2>
-                    <p>
-                        To enjoy the full features of this app, please connect
-                        your PayPal account. Proceed to the PayPal page to grant
-                        access to your information. Once you've completed the
-                        process, return to this page.
-                    </p>
-                    <button onClick={startOnboarding}>Connect</button>
+                    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6 max-w-md">
+                        <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 text-center">
+                            <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
+                                Welcome! {userName}
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-6">
+                                To enjoy the full features of this app, please
+                                connect your PayPal account. Proceed to the
+                                PayPal page to grant access to your information.
+                                Once you've completed the process, return to
+                                this page.
+                            </p>
+                            <button
+                                onClick={startOnboarding}
+                                className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-600 transition"
+                            >
+                                Connect
+                            </button>
+                        </div>
+                    </div>
                 </>
             )}
         </div>

@@ -14,6 +14,7 @@ import UserMainPage from "./pages/userMain";
 import SignupPage from "./pages/signup";
 import TopBar from "./components/TopBar";
 import TransactionPage from "./pages/Transaction";
+import OrganizationPage from "./pages/Organization";
 
 const App: React.FC = () => {
     const { isSignedIn } = useAuth();
@@ -87,6 +88,7 @@ const App: React.FC = () => {
                         )
                     }
                 />
+                <Route path="/organization" element={<OrganizationPage />} />
             </Routes>
         </Router>
     );
