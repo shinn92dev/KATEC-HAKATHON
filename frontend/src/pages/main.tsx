@@ -2,35 +2,24 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Home: React.FunctionComponent = () => {
-    const [message, setMessage] = useState("");
-    useEffect(() => {
-        fetch("http://localhost:5000/")
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.status === "OK") {
-                    setMessage(data.message);
-                } else {
-                    setMessage("Unexpected response");
-                }
-            })
-            .catch((err) => {
-                console.error(err);
-                setMessage("Connection error");
-            });
-    }, []);
     return (
-        <div className="logged-out-page text-center tracking-wider leading-loose content">
-            <p>server status: {message}</p>
-            <h2 className="text-3xl font-bold">
-                Small Coins <br />
-                Big Difference
-            </h2>
-            <div>Together we spark brighter tomorrows</div>
-            <button className="rounded-full bg-blue-500	w-1/4">
-                <Link to="/login" className="text-white">
-                    Start Saving the World
-                </Link>
-            </button>
+        <div className="w-full flex justify-center">
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 via-white to-gray-100 p-6 max-w-md">
+                <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
+                    <h1 className="text-4xl font-extrabold text-blue-600 mb-4">
+                        Tiny Steps, <br /> Huge Impact
+                    </h1>
+                    <p className="text-lg text-gray-700 mb-6">
+                        Together, we can change the world—one small act of
+                        kindness at a time.
+                    </p>
+                    <Link to="/login">
+                        <button className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-600 transition">
+                            Start Your Journey 🌍
+                        </button>
+                    </Link>
+                </div>
+            </div>
         </div>
     );
 };

@@ -18,7 +18,7 @@ const TopBar: React.FunctionComponent = () => {
                 My App
             </div>
             <div className="flex items-center">
-                <div className="mr-1">
+                <div className="mr-5">
                     {isSignedIn ? <UserButton /> : <></>}
                 </div>
                 <SettingIcon />
