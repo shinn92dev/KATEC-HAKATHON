@@ -15,3 +15,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Creates 3 columns */
+    gap: 10px;  /* Space between images */
+    justify-items: center;  /* Center images in each cell */
+}
+
+.badge-image {
+    width: 100%;  /* Let the images fill the column space */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px;
+    padding: 20px;
+}
