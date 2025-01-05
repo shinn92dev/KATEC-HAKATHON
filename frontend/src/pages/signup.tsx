@@ -3,7 +3,7 @@ import { SignUp } from "@clerk/clerk-react";
 
 const SignupPage: React.FC = () => {
     return (
-        <div className="signup">
+        <div className="signup content">
             User name <br />
             Email address <br />
             Paypal account ID <br />

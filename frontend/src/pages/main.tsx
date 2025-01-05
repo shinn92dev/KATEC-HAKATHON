@@ -19,7 +19,7 @@ const Home: React.FunctionComponent = () => {
             });
     }, []);
     return (
-        <div className="logged-out-page text-center tracking-wider leading-loose">
+        <div className="logged-out-page text-center tracking-wider leading-loose content">
             <p>server status: {message}</p>
             <h2 className="text-3xl font-bold">
                 Small Coins <br />

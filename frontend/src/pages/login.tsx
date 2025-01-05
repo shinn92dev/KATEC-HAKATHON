@@ -3,7 +3,7 @@ import { SignIn } from "@clerk/clerk-react";
 
 const LoginPage: React.FC = () => {
     return (
-        <div className="login-page">
+        <div className="login-page content">
             <SignIn path="/login" routing="path" />
             <h1>Login to Your Account</h1>
             <form>

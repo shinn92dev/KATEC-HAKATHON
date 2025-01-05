@@ -12,14 +12,20 @@ import LoginPage from "./pages/login";
 import UserProfile from "./pages/profile";
 import UserMainPage from "./pages/userMain";
 import SignupPage from "./pages/signup";
+import TopBar from "./components/TopBar";
+import TransactionPage from "./pages/Transaction";
 
 const App: React.FC = () => {
     const { isSignedIn } = useAuth();
     if (isSignedIn === undefined) {
-        return <div>Loading...</div>;
+        return <div className="content">Loading...</div>;
     }
     return (
         <Router>
+            <div className="flex justify-center">
+                <TopBar />
+            </div>
+
             <Routes>
                 <Route
                     path="/"
@@ -68,6 +74,16 @@ const App: React.FC = () => {
                             <SignupPage />
                         ) : (
                             <Navigate to="/signup" replace />
+                        )
+                    }
+                />
+                <Route
+                    path="/transaction"
+                    element={
+                        isSignedIn ? (
+                            <TransactionPage />
+                        ) : (
+                            <Navigate to="/signin" replace />
                         )
                     }
                 />

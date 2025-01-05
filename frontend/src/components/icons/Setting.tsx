@@ -3,13 +3,13 @@ import React from "react";
 const SettingIcon: React.FunctionComponent = () => {
     return (
         <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
+            className="w-9 h-9 text-gray-800 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="30"
+            height="30"
             fill="currentColor"
-            viewBox="0 0 24 24"
+            viewBox="0 0 30 28"
         >
             <path
                 fill-rule="evenodd"
