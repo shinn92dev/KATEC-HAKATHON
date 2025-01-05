@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
+import { useChange } from "../components/context/ChangeContext";
 
 const UserMainPage: React.FunctionComponent = () => {
     const [isConnected, setIsConnected] = useState<boolean>(() => {
@@ -11,6 +12,7 @@ const UserMainPage: React.FunctionComponent = () => {
 
     const { user } = useUser();
     const userName = user?.firstName || "there!";
+    const change = useChange();
 
     // Initial connection check
     useEffect(() => {
@@ -60,11 +62,16 @@ const UserMainPage: React.FunctionComponent = () => {
                         <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
                             Welcome, {userName}!
                         </h2>
-                        <p className="text-lg text-gray-600">
-                            From your last donation, you have saved:
-                        </p>
-                        <div className="text-4xl font-bold text-blue-600 my-4">
-                            $15.80
+                        <div>
+                            {change !== undefined && (
+                                <p className="text-gray-700 mt-2">
+                                    You can make a small difference by donating
+                                    the extra:{" "}
+                                    <span className="text-blue-600 font-bold">
+                                        ${change.toFixed(2)}
+                                    </span>
+                                </p>
+                            )}
                         </div>
                         <Link
                             to="/transaction"
