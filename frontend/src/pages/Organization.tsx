@@ -62,16 +62,18 @@ const OrganizationPage: React.FC = () => {
         },
     ];
     return (
-        <div className="bg-gray-50 min-h-screen p-6 flex flex-wrap gap-6 justify-center">
-            {ngos.map((ngo, index) => (
-                <OrganizationCard
-                    key={index}
-                    name={ngo.name}
-                    description={ngo.description}
-                    logoUrl={ngo.logoUrl}
-                    donateLink={ngo.donateLink}
-                />
-            ))}
+        <div className="w-full flex justify-center">
+            <div className="bg-gray-50 min-h-screen p-6 flex flex-wrap gap-6 justify-center max-w-md">
+                {ngos.map((ngo, index) => (
+                    <OrganizationCard
+                        key={index}
+                        name={ngo.name}
+                        description={ngo.description}
+                        logoUrl={ngo.logoUrl}
+                        donateLink={ngo.donateLink}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
