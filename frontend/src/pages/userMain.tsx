@@ -60,7 +60,7 @@ const UserMainPage: React.FunctionComponent = () => {
                 <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6 max-w-md">
                     <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 text-center">
                         <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
-                            Welcome, {userName}!
+                            Hello, {userName}!
                         </h2>
                         <div>
                             {change !== undefined && (
@@ -101,7 +101,7 @@ const UserMainPage: React.FunctionComponent = () => {
                     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6 max-w-md">
                         <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 text-center">
                             <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
-                                Welcome! {userName}
+                                Hello, {userName}
                             </h2>
                             <p className="text-lg text-gray-600 mb-6">
                                 To enjoy the full features of this app, please

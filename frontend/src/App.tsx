@@ -16,6 +16,7 @@ import TopBar from "./components/TopBar";
 import TransactionPage from "./pages/Transaction";
 import OrganizationPage from "./pages/Organization";
 import { ChangeProvider } from "./components/context/ChangeContext";
+import BadgesPage from "./pages/mybadges";
 
 const App: React.FC = () => {
     const { isSignedIn } = useAuth();
@@ -93,6 +94,10 @@ const App: React.FC = () => {
                     <Route
                         path="/organization"
                         element={<OrganizationPage />}
+                    />
+                    <Route
+                        path="/mybadges"
+                        element={<BadgesPage />}
                     />
                 </Routes>
             </Router>
